@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>صيغ الأملاح المائية</title>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#04101c;--cu:#3cb8ff;--gold:#ffb86b;--mint:#72f5cf;--tx:#e9f5ff;--mut:#a5bfd6;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:var(--ink);color:var(--tx);font:500 clamp(15px,1.45vw,21px)/1.85 Tajawal,Tahoma,sans-serif}
+.bg{position:fixed;inset:0;overflow:hidden;background:radial-gradient(120% 90% at 80% 0,#0b2e52,#04101c 60%)}
+.bg i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;animation:dr 18s ease-in-out infinite alternate}
+.bg i:nth-child(1){width:44vw;height:44vw;background:#1478c4;left:-8vw;top:-10vw}
+.bg i:nth-child(2){width:36vw;height:36vw;background:#0f9c86;right:-6vw;bottom:-8vw;animation-delay:-6s}
+.bg i:nth-child(3){width:26vw;height:26vw;background:#c9742a;left:42vw;top:30vh;opacity:.22;animation-delay:-11s}
+@keyframes dr{to{transform:translate(8vw,6vh) scale(1.2)}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:50}
+.slide{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;padding:4vh 7vw 11vh;overflow:auto;z-index:1}
+.slide.on{display:flex;animation:var(--e) .95s cubic-bezier(.2,.8,.2,1)}
+@keyframes e0{from{opacity:0;transform:scale(.86);filter:blur(16px)}}
+@keyframes e1{from{opacity:0;transform:perspective(1200px) rotateY(40deg) translateX(-10vw)}}
+@keyframes e2{from{opacity:0;transform:translateY(12vh) skewY(5deg)}}
+@keyframes e3{from{opacity:0;clip-path:circle(0% at 50% 50%)}to{clip-path:circle(150% at 50% 50%)}}
+.on .r{animation:up .8s both;animation-delay:calc(var(--i,0)*.12s + .25s)}
+@keyframes up{from{opacity:0;transform:translateY(34px)}}
+h1,h2,h3{font-family:'Reem Kufi',Tajawal,sans-serif;line-height:1.3}
+h1{font-size:clamp(38px,7vw,100px);background:linear-gradient(100deg,#fff,#8fdcff 50%,#72f5cf);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(26px,3.6vw,52px);margin-bottom:.5em;color:#fff;position:relative;padding-bottom:.3em}
+h2::after{content:"";position:absolute;right:0;bottom:0;height:4px;width:0;border-radius:4px;background:linear-gradient(90deg,var(--cu),var(--mint));animation:w 1s .5s forwards}
+@keyframes w{to{width:min(40%,260px)}}
+h3{font-size:1.3em;color:var(--gold);margin-bottom:.3em}
+sub{font-size:.7em}
+.f{font-family:Tajawal,sans-serif;font-weight:700;color:var(--mint);unicode-bidi:isolate;white-space:nowrap}
+.card{background:linear-gradient(150deg,rgba(60,184,255,.14),rgba(255,255,255,.03));border:1px solid rgba(120,200,255,.28);border-radius:22px;padding:1em 1.4em;backdrop-filter:blur(10px);transition:transform .15s,border-color .3s,box-shadow .3s;transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0))}
+.card:hover{border-color:var(--cu);box-shadow:0 0 40px -8px var(--cu)}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.1em}
+.big{font-size:clamp(44px,9vw,130px);text-align:center;font-family:'Reem Kufi';font-weight:700;background:linear-gradient(100deg,#fff,var(--cu),var(--mint),var(--gold));background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:300% 0}}
+.cen{align-items:center;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:.6em;margin:1.2em 0}
+.chips span{padding:.3em 1em;border-radius:99px;border:1px solid rgba(120,200,255,.45);background:rgba(60,184,255,.1);font-weight:700}
+.sup{color:var(--gold);font-size:1.25em;font-weight:700}
+.hero{display:flex;align-items:center;gap:5vw;flex-wrap:wrap;justify-content:center}
+.cw{perspective:900px;width:190px;height:190px;display:grid;place-items:center}
+.cube{width:130px;height:130px;position:relative;transform-style:preserve-3d;animation:spin 12s linear infinite}
+.cube i{position:absolute;inset:0;border:2px solid rgba(110,210,255,.8);background:rgba(60,184,255,.16);box-shadow:inset 0 0 30px rgba(60,184,255,.5)}
+.cube i:nth-child(1){transform:translateZ(65px)}.cube i:nth-child(2){transform:rotateY(180deg) translateZ(65px)}.cube i:nth-child(3){transform:rotateY(90deg) translateZ(65px)}.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(65px)}.cube i:nth-child(5){transform:rotateX(90deg) translateZ(65px)}.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(65px)}
+.cube b{position:absolute;inset:40px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--mint) 40%,#0b7a68);animation:pl 2s ease-in-out infinite alternate}
+@keyframes spin{to{transform:rotateX(360deg) rotateY(360deg)}}
+@keyframes pl{to{transform:scale(1.25)}}
+ul.l{list-style:none;padding:0;display:grid;gap:.6em}
+ul.l li{padding-right:1.4em;position:relative}
+ul.l li::before{content:"";position:absolute;right:0;top:.8em;width:.6em;height:.6em;border-radius:50%;background:var(--cu);box-shadow:0 0 12px var(--cu)}
+table{width:100%;border-collapse:collapse}
+td,th{padding:.45em .8em;border-bottom:1px solid rgba(120,200,255,.2);text-align:right}
+th{color:var(--gold)}
+.btn{font:700 1em Tajawal;color:#04101c;background:linear-gradient(100deg,var(--cu),var(--mint));border:0;border-radius:99px;padding:.5em 1.6em;cursor:pointer;margin-top:.8em;transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 0 rgba(60,184,255,.6)}
+.btn:hover{transform:scale(1.06);box-shadow:0 0 30px 4px rgba(60,184,255,.5)}
+.opts{display:grid;gap:.6em;margin:.7em 0}
+.opt{font:600 1em Tajawal;color:var(--tx);text-align:right;background:rgba(255,255,255,.05);border:1px solid rgba(120,200,255,.3);border-radius:14px;padding:.55em 1em;cursor:pointer;transition:.2s}
+.opt:hover{background:rgba(60,184,255,.2);transform:translateX(-6px)}
+.opt.ok{background:rgba(40,200,140,.3);border-color:#3ee0a0}
+.opt.no{background:rgba(255,80,90,.3);border-color:#ff6670;animation:sk .4s}
+@keyframes sk{25%{transform:translateX(8px)}75%{transform:translateX(-8px)}}
+.ex{display:none;margin-top:.4em;padding:.7em 1em;border-radius:14px;background:rgba(255,184,107,.12);border:1px dashed var(--gold)}
+.ex.show{display:block;animation:up .5s both}
+.qn{color:var(--mut);font-size:.9em}
+.score{font:700 4em 'Reem Kufi';color:var(--mint);text-align:center}
+.sol{display:none;margin-top:.8em;gap:.5em}
+.sol.show{display:grid}
+.sol div{padding:.5em 1em;border-radius:12px;background:rgba(114,245,207,.1);border-right:4px solid var(--mint);opacity:0;animation:up .6s forwards;animation-delay:calc(var(--k)*.45s)}
+.pie{width:min(34vw,200px);aspect-ratio:1;border-radius:50%;background:conic-gradient(var(--mint) 0 48.8%,var(--gold) 0);box-shadow:0 0 40px rgba(60,184,255,.4);animation:spin2 1.6s cubic-bezier(.2,.8,.2,1)}
+@keyframes spin2{from{transform:rotate(-240deg) scale(.3)}}
+.flex{display:flex;gap:1.5em;align-items:center;flex-wrap:wrap}
+.stage{position:relative;flex:1;min-height:58vh;touch-action:none;cursor:grab;user-select:none}
+.bw{position:absolute;left:7%;top:8%;height:80%;aspect-ratio:3/4;perspective:1200px;animation:flt 5s ease-in-out infinite}
+@keyframes flt{50%{transform:translateY(-14px)}}
+.pb{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateY(var(--ry)) scale(var(--s,1));transition:transform .12s,filter .6s}
+.lay{position:absolute;inset:0;background:linear-gradient(135deg,#fff,#e8edf2 55%,#cfd8e2);border:1px solid #bcc6d2;clip-path:polygon(0 3%,5% 0,95% 0,100% 3%,100% 97%,95% 100%,5% 100%,0 97%);overflow:hidden}
+.lay.p::before,.lay.p::after{content:"";position:absolute;left:0;right:0;height:7%;background:repeating-linear-gradient(90deg,#c3ccd8 0 3px,transparent 3px 6px);opacity:.7}
+.lay.p::before{top:0}.lay.p::after{bottom:0}
+.pr{position:absolute;inset:0;display:grid;place-content:center;text-align:center;transform:rotate(-16deg);font:800 clamp(13px,1.9vw,26px)/1.25 Arial,sans-serif;color:#2a68d4;direction:ltr}
+.pr b{font-size:1.7em}
+.open .pb{--s:.84;filter:brightness(.8)}
+.tear{position:absolute;left:12%;top:9%;width:20%;height:6%;background:#fff;border:1px solid #bcc6d2;clip-path:polygon(0 0,100% 0,96% 40%,100% 100%,0 100%,4% 60%);opacity:0;transition:all 1s cubic-bezier(.2,.8,.2,1)}
+.open .tear{opacity:1;left:34%;top:6%;transform:rotate(-24deg)}
+.bead{position:absolute;border-radius:50%;left:19%;top:46%;opacity:0;background:radial-gradient(circle at 32% 28%,#fff,rgba(190,225,255,.85) 40%,rgba(110,160,210,.7));box-shadow:inset -3px -3px 6px rgba(40,90,150,.45);transition:all 1.1s cubic-bezier(.3,1.5,.5,1)}
+.bead.o{background:radial-gradient(circle at 32% 28%,#ffe9c9,#ff9a3c 45%,#b9540a)}
+.bead.on2{opacity:1;left:var(--x);top:var(--y);transform:rotate(var(--a))}
+.mag{position:absolute;left:44%;top:26%;width:min(15vmin,130px);aspect-ratio:1;border-radius:50%;border:3px solid var(--mint);background:radial-gradient(circle at 35% 30%,#dff3ff,#8ab6dc);overflow:hidden;opacity:0;transform:scale(0);transition:all .9s .5s cubic-bezier(.3,1.5,.5,1);box-shadow:0 0 30px rgba(114,245,207,.5)}
+.open .mag{opacity:1;transform:scale(1)}
+.ln{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.ln line{stroke:var(--mint);stroke-width:2;vector-effect:non-scaling-stroke;opacity:0;transition:opacity .5s}
+.cb{position:absolute;right:1%;width:29%;padding:.5em .9em;font-size:.78em;line-height:1.55;opacity:0;transform:translateX(30px);transition:all .7s}
+.cb b{color:var(--gold);display:block}
+.open .cb,.open .ln .lo{opacity:1;transform:none}
+.open .c1{transition-delay:.9s}.open .c2{transition-delay:1.3s}.open .c3{transition-delay:1.7s}.open .c4{transition-delay:2.1s}
+.open .ln .lo{transition-delay:1s}
+.lab{position:absolute;right:6%;top:42%;font:700 clamp(30px,4.5vw,64px) 'Reem Kufi';color:#fff;text-shadow:0 0 30px var(--cu);transition:opacity .4s}
+.ln .l0{opacity:1}
+.open .lab,.open .ln .l0,.open .hint{opacity:0}
+.hint{position:absolute;bottom:0;left:0;color:var(--mut);font-size:.85em}
+.nav{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);left:50%;transform:translateX(-50%);z-index:60;display:flex;gap:.8em;align-items:center;padding:.35em .9em;border-radius:99px;background:rgba(5,20,38,.8);border:1px solid rgba(120,200,255,.35);backdrop-filter:blur(12px);font-size:.85em;white-space:nowrap}
+.nav button{background:none;border:1px solid var(--cu);color:var(--tx);width:2.2em;height:2.2em;border-radius:50%;cursor:pointer;font-size:1em}
+.nav button:hover{background:var(--cu);color:#04101c}
+#pg{position:fixed;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--mint),var(--cu));z-index:70;transition:width .6s;box-shadow:0 0 14px var(--cu)}
+@media(max-width:700px){.cb{width:44%;font-size:.7em}.slide{padding:3vh 5vw 12vh}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;transition-duration:.01s!important}}
+</style></head><body>
+<div class="bg"><i></i><i></i><i></i></div><canvas id="fx"></canvas><div id="pg"></div>
+<main id="app"></main>
+<div class="nav"><button onclick="go(cur+1)" aria-label="التالي">›</button><span id="ct"></span><button onclick="go(cur-1)" aria-label="السابق">‹</button><span id="tm"></span><button id="fs" onclick="fsT()" aria-label="ملء الشاشة" title="ملء الشاشة (F)">⛶</button></div>
+<script>
+const $=id=>document.getElementById(id);
+const sub=s=>s.replace(/([A-Za-z\)])(\d+)/g,'$1<sub>$2</sub>');
+const T=s=>s.replace(/\[\[(.+?)\]\]/g,(m,x)=>`<span class=f dir=ltr>${sub(x)}</span>`);
+const hd=t=>`<h2 class=r>${t}</h2>`;
+const cd=(t,c='')=>`<div class="card r ${c}">${T(t)}</div>`;
+const gr=a=>`<div class=g2>${a.join('')}</div>`;
+const li=a=>`<ul class="l">${a.map(x=>`<li>${T(x)}</li>`).join('')}</ul>`;
+const big=(t,s)=>`<div class=cen style="display:flex;flex-direction:column;align-items:center"><div class="big r">${t}</div><p class="r sup" style="margin-top:.5em">${s||''}</p></div>`;
+const names=['وضاح علي','يحيى نزار','لؤي أحمد','مالك معاذ','عبد الله الزين','محمد آل ساري','مروان معاذ','سعد شوبق'].map(n=>`<span>${n}</span>`).join('');
+const SUP='تحت إشراف: أ. حسين الناصر';
+const MIN=[1,1,2,2,2,2,2,2,2,2,1,2,2,2,2,5,5,1,1,3,4,2,1,1];
+const Q={};
+const qz=(id,items)=>{Q[id]={items,i:0,s:0,a:0};return `<div class="qz card r" id="qz${id}"></div>`};
+function rq(id){const z=Q[id],el=$('qz'+id);z.a=0;
+ if(z.i>=z.items.length){el.innerHTML=`<h3>انتهى الاختبار</h3><div class=score>${z.s} / ${z.items.length}</div><button class=btn onclick="Q[${id}].i=0;Q[${id}].s=0;rq(${id})">إعادة الاختبار</button>`;return}
+ const[q,o,c]=z.items[z.i];
+ el.innerHTML=`<div class=qn>السؤال ${z.i+1} من ${z.items.length}</div><h3>${T(q)}</h3><div class=opts>${o.map((x,j)=>`<button class=opt onclick="ans(${id},${j},this)">${T(x)}</button>`).join('')}</div><div class=ex></div>`}
+function ans(id,j,b){const z=Q[id];if(z.a)return;z.a=1;const[q,o,c,e]=z.items[z.i];const bs=b.parentNode.children;bs[c].classList.add('ok');if(j!=c)b.classList.add('no');else z.s++;
+ const ex=b.parentNode.nextElementSibling;ex.innerHTML=`<b>${j==c?'إجابة صحيحة ✓':'إجابة غير صحيحة ✗'}</b> — الإجابة الصحيحة: ${T(o[c])}<br>${T(e)}<br><button class=btn onclick="Q[${id}].i++;rq(${id})">${z.i+1<z.items.length?'السؤال التالي':'عرض النتيجة'}</button>`;ex.classList.add('show')}
+const sol=(q,steps)=>`<div class="card r">${T(q)}<br><button class=btn onclick="const s=this.nextElementSibling;s.classList.toggle('show');this.textContent=s.classList.contains('show')?'إخفاء الحل':'إظهار الحل'">إظهار الحل</button><div class=sol>${steps.map((x,k)=>`<div style="--k:${k}">${T(x)}</div>`).join('')}</div></div>`;
+
+const S=[];
+S.push(`<div class=hero><div class="cw r"><div class=cube><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div></div><div><h1 class=r>صيغ الأملاح المائية</h1><div class="chips r">${names}</div><p class="sup r">${SUP}</p></div></div>`);
+S.push(hd('أهداف الدرس')+gr([
+ cd('<h3>أهداف الدرس</h3>'+li(['يوضّح الطالب المقصود بالملح المائي ويربط اسمه بتركيبته.','يحدّد صيغة الملح المائي من البيانات المختبرية.'])),
+ cd('<h3>الفكرة الرئيسية للدرس السابق</h3>الصيغة الأولية والصيغة الجزيئية.'),
+ cd('<h3>الفكرة الرئيسية لهذا الدرس</h3>الصيغة الجزيئية لمركب ما هي مضاعف عددي صحيح لصيغته الأولية.')]));
+S.push(hd('الفكرة الرئيسية للدرس')+big('الصيغة الجزيئية','لمركب ما هي مضاعف عددي صحيح لصيغته الأولية'));
+S.push(hd('الصيغة الأولية')+gr([
+ cd('<h3>التعريف</h3>الصيغة الأولية هي أبسط نسبة عددية صحيحة بين أعداد ذرات العناصر في المركب.'),
+ cd('<h3>الشرح</h3>'+li(['تُحسب من كتل العناصر أو نسبها المئوية.','نحوّل الكتل إلى مولات، ثم نقسم الجميع على أصغر عدد مولات.','الجلوكوز [[C6H12O6]] صيغته الأولية [[CH2O]].','فوق أكسيد الهيدروجين [[H2O2]] صيغته الأولية [[HO]].']))]));
+S.push(hd('الصيغة الجزيئية')+gr([
+ cd('<h3>التعريف</h3>الصيغة الجزيئية تبيّن العدد الفعلي لذرات كل عنصر في جزيء واحد من المركب.'),
+ cd('<h3>الشرح</h3>'+li(['الصيغة الجزيئية = n × الصيغة الأولية (n عدد صحيح).','n = الكتلة المولية للمركب ÷ كتلة الصيغة الأولية.','مثال: كتلة [[CH2O]] = 30.03 g/mol، وكتلة الجلوكوز المولية 180.16 g/mol، إذن n = 6 فتكون الصيغة [[C6H12O6]].']))]));
+S.push(hd('أسئلة سريعة: الصيغة الأولية والجزيئية')+qz(1,[
+ ['الصيغة الأولية هي:',['العدد الفعلي للذرات في الجزيء','أبسط نسبة عددية صحيحة بين ذرات العناصر','كتلة المركب','لون المركب'],1,'الصيغة الأولية تعبّر عن أبسط نسبة صحيحة بين الذرات.'],
+ ['الصيغة الجزيئية لمركب هي:',['مضاعف عددي صحيح لصيغته الأولية','نصف صيغته الأولية','دائمًا تساوي الأولية','لا علاقة لها بالأولية'],0,'الصيغة الجزيئية = n × الصيغة الأولية.'],
+ ['الصيغة الأولية للجلوكوز [[C6H12O6]] هي:',['[[CH2O]]','[[C2H4O2]]','[[C3H6O3]]','[[CHO]]'],0,'نقسم أعداد الذرات على 6 فنحصل على [[CH2O]].'],
+ ['الصيغة التي تبيّن العدد الفعلي لذرات كل عنصر في الجزيء هي:',['الصيغة الأولية','الصيغة الجزيئية','الصيغة المائية','صيغة النسبة'],1,'هذا تعريف الصيغة الجزيئية.']]));
+S.push(hd('الفكرة الرئيسية للدرس')+big('الأملاح المائية','مركبات أيونية صلبة فيها جزيئات ماء محتجزة'));
+S.push(hd('الملح المائي وتسميته')+gr([
+ cd('<h3>التعريف</h3>الملح المائي مركب أيوني صلب بلوري يحتجز عددًا ثابتًا من جزيئات الماء داخل بلّورته، تُسمّى ماء التبلور. الماء جزء من البلورة وليس رطوبة على سطحها.'),
+ cd('<h3>الصيغة</h3>[[CuSO4·5H2O]] — النقطة تعني أن الماء مرتبط بالملح، والرقم x يمثل عدد مولات الماء لكل مول من الملح. الملح بعد فقدان مائه يسمى <b>لامائيًا</b>.'),
+ cd('<h3>قاعدة التسمية</h3>نكتب اسم المركب الأيوني ثم عدد جزيئات الماء بالبادئة مع كلمة «الماء». مثال: [[CuSO4·5H2O]] ← كبريتات النحاس (II) خماسية الماء.')]));
+S.push(hd('بادئات التسمية وأمثلة')+gr([
+ `<div class="card r"><table><tr><th>العدد</th><th>البادئة</th><th>العدد</th><th>البادئة</th></tr><tr><td>1</td><td>أحادية (mono)</td><td>6</td><td>سداسية (hexa)</td></tr><tr><td>2</td><td>ثنائية (di)</td><td>7</td><td>سباعية (hepta)</td></tr><tr><td>3</td><td>ثلاثية (tri)</td><td>8</td><td>ثمانية (octa)</td></tr><tr><td>4</td><td>رباعية (tetra)</td><td>9</td><td>تساعية (nona)</td></tr><tr><td>5</td><td>خماسية (penta)</td><td>10</td><td>عشارية (deca)</td></tr></table></div>`,
+ cd('<h3>أمثلة</h3>'+li(['[[CaSO4·2H2O]] كبريتات الكالسيوم ثنائية الماء','[[MgSO4·7H2O]] كبريتات المغنيسيوم سباعية الماء','[[Na2CO3·10H2O]] كربونات الصوديوم عشارية الماء']))]));
+S.push(hd('أحجار الأوبال والأملاح المائية')+gr([
+ cd('<h3>ما الأوبال؟</h3>حجر كريم يتكوّن من ثاني أكسيد السيليكون المائي [[SiO2·nH2O]]. يحتجز الماء بين كرات سيليكا متناهية الصغر، وتبلغ نسبة الماء فيه عادة بين 3% و10% وقد تصل إلى نحو 20%.'),
+ cd('<h3>العلاقة بالأملاح المائية</h3>الأوبال ليس ملحًا مائيًا بلوريًا دقيقًا، لكنه مثال على مادة صلبة تحتجز الماء في تركيبها، ويمكن أن يتشقق إذا فقد ماءه.'),
+ cd('<h3>أمثلة بسيطة أخرى</h3>'+li(['الجبس [[CaSO4·2H2O]]','ملح إبسوم [[MgSO4·7H2O]]','صودا الغسيل [[Na2CO3·10H2O]]']))]));
+S.push(hd('أسئلة سريعة: التسمية والتعريف والأوبال')+qz(2,[
+ ['الملح المائي هو:',['غاز يذوب في الماء','مركب أيوني صلب يحتجز جزيئات ماء','محلول ملحي','معدن نقي'],1,'الملح المائي مركب أيوني صلب فيه ماء محتجز داخل البلورة.'],
+ ['اسم [[CuSO4·5H2O]] هو:',['كبريتات النحاس (II) ثنائية الماء','كبريتات النحاس (II) خماسية الماء','كلوريد النحاس سباعية الماء','كبريتات النحاس اللامائية'],1,'العدد 5 يقابل البادئة «خماسية».'],
+ ['البادئة التي تدل على 7 جزيئات ماء:',['سداسية','سباعية','ثمانية','رباعية'],1,'7 = سباعية (hepta).'],
+ ['حجر الأوبال يحتوي على:',['ثاني أكسيد السيليكون مع ماء محتجز','حديد فقط','ذهب','كربون نقي'],0,'صيغته [[SiO2·nH2O]].'],
+ ['عدد جزيئات الماء في الجبس [[CaSO4·2H2O]]:',['1','2','5','10'],1,'الرقم قبل [[H2O]] يدل على عدد جزيئات الماء.']]));
+S.push(hd('أشهر الأملاح المائية')+`<div class="card r"><table><tr><th>الصيغة</th><th>الاسم</th><th>معروف بـ</th></tr><tr><td>[[CuSO4·5H2O]]</td><td>كبريتات النحاس (II) خماسية الماء</td><td>بلورات زرقاء</td></tr><tr><td>[[MgSO4·7H2O]]</td><td>كبريتات المغنيسيوم سباعية الماء</td><td>ملح إبسوم</td></tr><tr><td>[[CaSO4·2H2O]]</td><td>كبريتات الكالسيوم ثنائية الماء</td><td>الجبس</td></tr><tr><td>[[Na2CO3·10H2O]]</td><td>كربونات الصوديوم عشارية الماء</td><td>صودا الغسيل</td></tr><tr><td>[[CoCl2·6H2O]]</td><td>كلوريد الكوبلت (II) سداسية الماء</td><td>بلورات وردية</td></tr></table></div>`);
+S.push(hd('تحليل الأملاح المائية (1): الفكرة والخطوات')+cd('نحلّل الملح المائي بتسخينه لطرد ماء التبلور، ثم نقارن الكتلة قبل التسخين وبعده.')+`<div style="height:.8em"></div>`+gr([
+ cd('١) نزن البوتقة والملح المائي.'),cd('٢) نسخّن بلطف حتى يتغير اللون وينتهي تصاعد البخار.'),cd('٣) نبرّد البوتقة في المجفف حتى لا يمتص الملح رطوبة الهواء.'),cd('٤) نزن، ونعيد التسخين حتى تثبت الكتلة.')]));
+S.push(hd('تحليل الأملاح المائية (2): الحساب')+gr([
+ cd('<h3>خطوات الحساب</h3>'+li(['كتلة الماء = كتلة الملح المائي − كتلة الملح اللامائي.','مولات الماء = كتلة الماء ÷ 18.02 g/mol.','مولات الملح اللامائي = كتلته ÷ كتلته المولية.','x = مولات الماء ÷ مولات الملح، ثم نقرّبه لأقرب عدد صحيح.'])),
+ cd('<h3>مصادر الخطأ</h3>'+li(['تسخين غير كامل فيبقى ماء.','تناثر الملح أثناء التسخين.','امتصاص الملح رطوبة الهواء قبل الوزن.','تسخين شديد يحلّل الملح نفسه.']))]));
+S.push(hd('استعمالات الأملاح المائية (1)')+gr([
+ cd('<h3>الجبس في البناء والطب</h3>عند تسخين الجبس [[CaSO4·2H2O]] يفقد معظم مائه فيتحول إلى جبس باريس الذي إذا خُلط بالماء تصلّب من جديد، ولذلك يُستعمل في الجبائر الطبية والجصّ وألواح الجدران.'),
+ cd('<h3>ملح إبسوم</h3>يُستعمل [[MgSO4·7H2O]] في حمّامات الاسترخاء لتخفيف إجهاد العضلات، وفي الزراعة لتزويد النبات بالمغنيسيوم.')]));
+S.push(hd('استعمالات الأملاح المائية (2)')+gr([
+ cd('<h3>الزراعة والصناعة</h3>كبريتات النحاس [[CuSO4·5H2O]] تدخل في مبيدات الفطريات وفي الطلاء الكهربائي.'),
+ cd('<h3>التنظيف</h3>صودا الغسيل [[Na2CO3·10H2O]] تُستعمل في التنظيف وتخفيف عسر الماء.'),
+ cd('<h3>مؤشر الرطوبة</h3>كلوريد الكوبلت (II) يتغير لونه بين الأزرق (جاف) والوردي (رطب).'),
+ cd('<h3>تخزين الحرارة</h3>كبريتات الصوديوم عشارية الماء (ملح جلوبر) تمتص حرارة عند انصهارها وتُدرس لتخزين الطاقة.')]));
+S.push(hd('مثال محلول: تحديد صيغة الملح المائي')+cd('سُخّنت عينة كتلتها 2.50 g من [[CuSO4·xH2O]] فبقي 1.59 g من [[CuSO4]] اللامائي. ما صيغة الملح المائي واسمه؟')+`<div style="height:.7em"></div>`+gr([
+ cd('<h3>كتلة الماء المفقود</h3>2.50 − 1.59 = 0.91 g'),
+ cd('<h3>مولات الملح</h3>1.59 g ÷ 159.6 g/mol = 0.00996 mol [[CuSO4]]'),
+ cd('<h3>مولات الماء</h3>0.91 g ÷ 18.02 g/mol = 0.05 mol [[H2O]]'),
+ cd('<h3>النسبة x</h3>0.050 ÷ 0.00996 ≈ 5')])+cd('الصيغة: [[CuSO4·5H2O]] — كبريتات النحاس (II) خماسية الماء.','')) ;
+S.push(hd('سؤال غير محلول (1)')+`<div class="flex"><div class="pie r" title="MgSO4 48.8% ، H2O 51.2%"></div>`+sol('يوضح الشكل تركيب أحد الأملاح المائية: [[MgSO4]] بنسبة 48.8% و[[H2O]] بنسبة 51.2% (الأخضر للملح، والأصفر للماء). ما صيغة هذا الملح المائي؟ وما اسمه؟',['نفرض عينة كتلتها 100 g: كتلة [[MgSO4]] = 48.8 g وكتلة [[H2O]] = 51.2 g.','مولات [[MgSO4]] = 48.8 ÷ 120.37 ≈ 0.405 mol','مولات [[H2O]] = 51.2 ÷ 18.02 ≈ 2.84 mol','x = 2.84 ÷ 0.405 ≈ 7','الصيغة: [[MgSO4·7H2O]] — كبريتات المغنيسيوم سباعية الماء (ملح إبسوم).'])+`</div>`);
+S.push(hd('سؤال غير محلول (2)')+sol('سُخّنت عينة كتلتها 11.75 g من ملح مائي شائع لكلوريد الكوبلت (II). وبقي بعد التسخين 0.0712 mol من كلوريد الكوبلت اللامائي. ما صيغة هذا الملح المائي؟ وما اسمه؟',['الكتلة المولية لـ [[CoCl2]] ≈ 129.8 g/mol','كتلة [[CoCl2]] = 0.0712 × 129.8 ≈ 9.24 g','كتلة الماء = 11.75 − 9.24 ≈ 2.51 g','مولات [[H2O]] = 2.51 ÷ 18.02 ≈ 0.139 mol','x = 0.139 ÷ 0.0712 ≈ 2','الصيغة: [[CoCl2·2H2O]] — كلوريد الكوبلت (II) ثنائي الماء.']));
+S.push(big('تجربة عملية على الدرس','تسخين كبريتات النحاس المائية الزرقاء'));
+S.push(big('السيليكا جل','المجفِّف الذي نجده في العلب والأحذية'));
+S.push(`<h2 class=r style="margin-bottom:.2em">كيس السيليكا جل ثلاثي الأبعاد</h2><div class="stage r" id=stg>
+<div class=bw><div class=pb id=pb></div></div><div class=tear></div><div id=bds></div>
+<div class=mag><svg viewBox="0 0 100 100" width=100% height=100%><g fill="#6f98c0" stroke="#3a6894"><circle cx=30 cy=30 r=11 /><circle cx=62 cy=24 r=8 /><circle cx=50 cy=58 r=13 /><circle cx=80 cy=60 r=9 /><circle cx=22 cy=72 r=8 /><circle cx=72 cy=86 r=7 /></g><g fill="#fff" opacity=".9"><circle cx=30 cy=30 r=3 /><circle cx=50 cy=58 r=4 /><circle cx=62 cy=24 r=2 /><circle cx=80 cy=60 r=3 /></g></svg></div>
+<svg class=ln viewBox="0 0 100 100" preserveAspectRatio="none"><line class=l0 x1=42 y1=50 x2=76 y2=50 /><line class=lo x1=40 y1=10 x2=70 y2=11 /><line class=lo x1=56 y1=34 x2=70 y2=35 /><line class=lo x1=52 y1=68 x2=70 y2=57 /><line class=lo x1=66 y1=84 x2=70 y2=80 /></svg>
+<div class=lab>سيليكا جل</div>
+<div class="cb card c1"><b>الكيس المنفِّذ للهواء</b>ورق خاص يسمح لبخار الماء بالدخول ويمنع خروج الحبيبات. مكتوب عليه «لا تأكل» لأنه ليس طعامًا.</div>
+<div class="cb card c2" style="top:24%"><b>المسام الدقيقة</b>الحبة من ثاني أكسيد السيليكون [[SiO2]] مليئة بمسام صغيرة جدًا، ومساحة سطح الجرام الواحد نحو 700 م² تلتصق بها جزيئات الماء (ادمصاص).</div>
+<div class="cb card c3" style="top:46%"><b>الحبيبات الشفافة</b>تمتص بخار الماء من الهواء، وقد تمتص نحو ثلث وزنها ماء، فتحمي الأجهزة والأحذية والأدوية من الرطوبة والعفن.</div>
+<div class="cb card c4" style="top:70%"><b>الحبيبات الملوّنة (المؤشر)</b>يتغير لونها عند امتلائها بالرطوبة، فتعرف متى تستبدلها أو تجفّفها بالتسخين.</div>
+<div class=hint>اسحب بالماوس لتدوير الكيس في كل الاتجاهات</div></div>
+<div class=cen style="display:flex;justify-content:center"><button class=btn id=ob>فتح الكيس</button></div>`);
+S.push(hd('اختبار شامل: 10 أسئلة')+qz(3,[
+ ['عند تسخين كبريتات النحاس المائية الزرقاء يتحول لونها إلى الأبيض لأنها:',['تمتص ماء','تفقد ماء التبلور','تذوب','تتأكسد فقط'],1,'فقدان الماء يحوّلها إلى الملح اللامائي الأبيض.'],
+ ['الملح اللامائي هو ملح:',['يحتوي ماء التبلور','فقد ماء التبلور','لا يذوب أبدًا','سائل'],1,'«لا مائي» أي بلا ماء تبلور.'],
+ ['الرقم x في الصيغة يشير إلى:',['عدد ذرات الملح','عدد مولات الماء لكل مول من الملح','كتلة الملح','لون الملح'],1,'x معامل الماء في صيغة الملح المائي.'],
+ ['أي استعمال مناسب للجبس؟',['الجبائر الطبية','صنع الزجاج','تعقيم الماء','إضاءة المصابيح'],0,'الجبس وجبس باريس يستخدمان في الجبائر والجص.'],
+ ['يُستعمل ملح إبسوم في:',['حمّامات الاسترخاء للعضلات','صناعة الوقود','قطع الحديد','تبريد المحركات'],0,'ملح إبسوم هو كبريتات المغنيسيوم سباعية الماء.'],
+ ['السيليكا جل يمسك الرطوبة بخاصية:',['الادمصاص على سطح مساماته','التبخير','الاحتراق','التجمّد'],0,'يلتصق بخار الماء بسطح مسام الحبيبة.'],
+ ['كُتب على كيس السيليكا جل «لا تأكل» لأنه:',['ليس طعامًا وقد يسبب اختناقًا','يتفجر','يذوب في الفم','يغيّر اللون'],0,'ليس للأكل وحبيباته قد تسبب خطر الاختناق خاصة للأطفال.'],
+ ['المادة الأساسية في السيليكا جل:',['ثاني أكسيد السيليكون','كلوريد الصوديوم','النحاس','الجبس'],0,'صيغتها [[SiO2]].'],
+ ['كلوريد الكوبلت (II) كمؤشر رطوبة يتغير من:',['الأخضر إلى الأحمر','الأزرق (جاف) إلى الوردي (رطب)','الأصفر إلى الأسود','لا يتغير'],1,'اللون الأزرق للجاف والوردي للرطب.'],
+ ['عند تسخين ملح مائي حتى يفقد كل مائه فإن كتلته:',['تزداد','تبقى ثابتة','تقل','تصبح صفرًا'],2,'الماء المفقود يُنقص الكتلة، ويبقى الملح اللامائي.']]));
+S.push(hd('خلاصة الدرس')+li(['الصيغة الجزيئية = مضاعف عددي صحيح للصيغة الأولية.','الملح المائي مركب أيوني صلب يحتجز عددًا ثابتًا من جزيئات الماء.','يُسمّى بذكر اسم الملح ثم بادئة العدد مع «الماء»، مثل خماسية الماء.','نحدّد صيغته بتسخينه ثم حساب مولات الماء ÷ مولات الملح اللامائي.','للأملاح المائية استعمالات في البناء والطب والزراعة والتنظيف.','السيليكا جل مجفف يمسك الماء على سطحه ولا نأكله.'].map(x=>x)));
+S.push(big('أوراق عمل للدرس','تدريب يرسّخ الفهم'));
+S.push(`<div class=cen style="display:flex;flex-direction:column;align-items:center"><div class="big r">شكرًا لإصغائكم</div><p class="r" style="font-size:1.3em;max-width:34em;margin:.6em 0">العلم يبدأ بسؤال صغير، وكل قطرة ماء محتجزة في بلورة تذكّرنا أن وراء كل شيء بسيط سرًّا ينتظر من يكتشفه. فلنبقَ فضوليين.</p><div class="chips r">${names}</div><p class="sup r">${SUP}</p></div>`);
+
+S.splice(17,1);S.splice(1,1);
+const app=$('app');let cur=-1,t0=Date.now();
+S.forEach((h,i)=>{const s=document.createElement('section');s.className='slide';s.style.setProperty('--e','e'+(i%4));s.innerHTML=T(h.replace(/\[\[(.+?)\]\]/g,'[[$1]]'));
+ s.querySelectorAll('.r').forEach((e,k)=>e.style.setProperty('--i',k));app.appendChild(s)});
+[1,2].forEach(rq);rq(3);
+const cum=[];MIN.reduce((a,b,i)=>(cum[i]=a+b,a+b),0);
+function go(n){n=Math.max(0,Math.min(S.length-1,n));if(n===cur)return;
+ const ss=app.children;if(ss[cur])ss[cur].classList.remove('on');cur=n;ss[n].classList.add('on');ss[n].scrollTop=0;
+ $('pg').style.width=((n+1)/S.length*100)+'%';$('ct').textContent=(n+1)+' / '+S.length;history.replaceState(null,'','#'+(n+1))}
+setInterval(()=>{const s=Math.floor((Date.now()-t0)/1000);$('tm').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')+' · الهدف '+cum[cur]+'د'},1000);
+addEventListener('keydown',e=>{if(['ArrowLeft','PageDown',' '].includes(e.key))go(cur+1);if(['ArrowRight','PageUp'].includes(e.key))go(cur-1)});
+go(Math.max(0,(parseInt(location.hash.slice(1))||1)-1));
+
+function fsT(){const d=document,e=d.documentElement;try{if(d.fullscreenElement||d.webkitFullscreenElement){(d.exitFullscreen||d.webkitExitFullscreen).call(d)}else{(e.requestFullscreen||e.webkitRequestFullscreen).call(e)}}catch(x){}}
+addEventListener('keydown',e=>{if(e.key==='f'||e.key==='F')fsT()});
+/* cursor sparks + card tilt */
+const cv=$('fx'),cx=cv.getContext('2d');let P=[];const rz=()=>{cv.width=innerWidth;cv.height=innerHeight};rz();addEventListener('resize',rz);
+addEventListener('pointermove',e=>{for(let i=0;i<3;i++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*2.5,vy:(Math.random()-.5)*2.5,l:1,h:170+Math.random()*60,r:2+Math.random()*4});
+ const c=e.target.closest&&e.target.closest('.card');document.querySelectorAll('.card[style*="--rx"]').forEach(x=>{if(x!==c){x.style.removeProperty('--rx');x.style.removeProperty('--ry')}});
+ if(c&&!c.classList.contains('qz')){const b=c.getBoundingClientRect();c.style.setProperty('--ry',((e.clientX-b.left)/b.width-.5)*10+'deg');c.style.setProperty('--rx',(.5-(e.clientY-b.top)/b.height)*8+'deg')}});
+(function L(){cx.clearRect(0,0,cv.width,cv.height);cx.globalCompositeOperation='lighter';P=P.filter(p=>p.l>0);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.l-=.03;cx.fillStyle=`hsla(${p.h},90%,65%,${p.l*.7})`;cx.beginPath();cx.arc(p.x,p.y,p.r*p.l,0,7);cx.fill()});requestAnimationFrame(L)})();
+
+/* 3D bag */
+const pb=$('pb'),stg=$('stg');let rx=-10,ry=-28,dg=0,lx=0,ly=0,op=0;
+const face=(z,cls,inner,fl)=>`<div class="lay ${cls}" style="transform:translateZ(${z}px)${fl?' rotateY(180deg)':''};inset:${Math.abs(z)*.25}px">${inner}</div>`;
+const PR='<div class=pr><span>DESICCANT</span><b>SILICA GEL</b><span>"DO NOT EAT"</span><span>THROW AWAY</span></div>';
+let h='';for(let z=-14;z<=14;z+=4)h+=face(z,'','');h+=face(18,'p',PR,0)+face(-18,'p',PR,1);pb.innerHTML=h;
+const ap=()=>{pb.style.setProperty('--rx',rx+'deg');pb.style.setProperty('--ry',ry+'deg')};ap();
+stg.addEventListener('pointerdown',e=>{if(e.target.closest('.cb'))return;dg=1;lx=e.clientX;ly=e.clientY;stg.style.cursor='grabbing'});
+addEventListener('pointerup',()=>{dg=0;stg.style.cursor='grab'});
+addEventListener('pointermove',e=>{if(!dg)return;ry+=(e.clientX-lx)*.6;rx-=(e.clientY-ly)*.6;lx=e.clientX;ly=e.clientY;ap()});
+const bd=$('bds');let bh='';const R=(a,b)=>a+Math.random()*(b-a);
+for(let i=0;i<26;i++){const s=R(13,22);bh+=`<i class=bead style="width:${s}px;height:${s}px;--x:${R(40,52)}%;--y:${R(60,74)}%;--a:${R(0,360)}deg;transition-delay:${i*.04}s"></i>`}
+for(let i=0;i<10;i++){const s=R(14,20);bh+=`<i class="bead o" style="width:${s}px;height:${s}px;--x:${R(57,64)}%;--y:${R(80,90)}%;--a:${R(0,360)}deg;transition-delay:${.3+i*.05}s"></i>`}
+bd.innerHTML=bh;
+$('ob').onclick=()=>{op=!op;stg.classList.toggle('open',op);document.querySelectorAll('.bead').forEach(b=>b.classList.toggle('on2',op));$('ob').textContent=op?'إغلاق الكيس':'فتح الكيس'};
+</script></body></html>
